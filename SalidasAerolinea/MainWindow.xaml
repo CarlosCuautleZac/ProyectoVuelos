@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:SalidasAerolinea"
         mc:Ignorable="d"
         xmlns:vm ="clr-namespace:SalidasAerolinea.ViewModels"
-        Title="MainWindow" MaxHeight="900" MinHeight="900" MaxWidth="1600" MinWidth="1600" Background="#144272">
+        Title="Salidas" MaxHeight="900" MinHeight="900" MaxWidth="1600" MinWidth="1600" Background="#144272">
     <Window.DataContext>
         <vm:AerolineaViewModel></vm:AerolineaViewModel>
     </Window.DataContext>

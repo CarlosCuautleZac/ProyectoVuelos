@@ -5,26 +5,49 @@
              x:Class="ArepouertoMovil.Views.AgregarVueloView" NavigationPage.HasNavigationBar="False"
              Background="#205295">
     <ContentPage.Content>
-        <StackLayout Margin="20" Spacing="15">
-            <Label>Destino:</Label>
-            <Entry Text="{Binding Vuelo.Destino}" Keyboard="Text"></Entry>
-            
-            <Label>Aerolinea:</Label>
-            <Entry Text="{Binding Vuelo.Aerolinea}" Keyboard="Text"></Entry>
-            
-            <Label>Fecha:</Label>
-            <DatePicker MinimumDate="{Binding MinDate}" Date="{Binding Fecha}"></DatePicker>
-            
-            <Label>Hora:</Label>
-            <TimePicker Time="{Binding Hora}"></TimePicker>
-            
-            <Label>Puerta:</Label>
-            <Entry Text="{Binding Vuelo.Puerta}" Keyboard="Numeric"></Entry>
-            
-            <Label>Observacion:</Label>
-            <Picker ItemsSource="{Binding Observaciones}" SelectedIndex="0" SelectedItem="{Binding Observacion}"
+        <Grid>
+            <StackLayout>
+                <Grid BackgroundColor="#144272" HeightRequest="50" Margin="0,0,0,0">
+
+                    <Label TextColor="White" FontSize="20" VerticalOptions="Center" HorizontalOptions="Center" >Nuevo vuelo</Label>
+                </Grid>
+
+                <StackLayout Margin="15" Spacing="15">
+
+                    <Label TextColor="White">Destino:</Label>
+                    <Entry TextColor="White" Text="{Binding Vuelo.Destino}" Keyboard="Text"></Entry>
+
+                    <Label TextColor="White">Aerolinea:</Label>
+                    <Entry TextColor="White" Text="{Binding Vuelo.Aerolinea}" Keyboard="Text"></Entry>
+
+                    <Label TextColor="White">Fecha:</Label>
+                    <DatePicker TextColor="White" FontSize="Body" Date="{Binding Fecha}"></DatePicker>
+
+                    <Label TextColor="White">Hora:</Label>
+                    <TimePicker TextColor="White" FontSize="Body"  Time="{Binding Hora}"></TimePicker>
+
+                    <Label TextColor="White">Puerta:</Label>
+                    <Entry TextColor="White" Text="{Binding Vuelo.Puerta}" Keyboard="Numeric"></Entry>
+
+                    <Label TextColor="White">Observacion:</Label>
+                    <Picker TextColor="White" ItemsSource="{Binding Observaciones}" SelectedIndex="0" SelectedItem="{Binding Observacion}"
                     ItemDisplayBinding="{Binding Observacion1}"></Picker>
-            <Button BackgroundColor="#144272" CornerRadius="50" Command="{Binding EnviarVueloCommand}" Text="Enviar"></Button>
-        </StackLayout>                                                                  
+                </StackLayout>
+            </StackLayout>
+            <Button TextColor="White" Command="{Binding EnviarVueloCommand}" Text="Enviar"
+                    Grid.Row="0" HorizontalOptions="End" VerticalOptions="End" Margin="0,0,20,22"
+                    BackgroundColor="#144272" CornerRadius="20" HeightRequest="60" WidthRequest="120"
+                    ></Button>
+
+            <Button TextColor="White" Command="{Binding CancelarCommand}" Text="Cancelar"
+                    Grid.Row="0" HorizontalOptions="Start" VerticalOptions="End" Margin="22,0,20,22"
+                    BackgroundColor="#144272" CornerRadius="20" HeightRequest="60"
+                    ></Button>
+
+            <Image
+                WidthRequest="50" Margin="0,0,0,22"
+                Grid.Row="0" VerticalOptions="End" HorizontalOptions="Center" Source="icono.png"></Image>
+        </Grid>
+
     </ContentPage.Content>
 </ContentPage>

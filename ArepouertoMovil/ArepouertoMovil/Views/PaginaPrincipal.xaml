@@ -35,7 +35,7 @@
                                             <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
                                         </Grid.GestureRecognizers>
                                         <Label TextColor="Black" Grid.Column="0" Text="{Binding Destino}"></Label>
-                                        <Label TextColor="Black" Grid.Column="1" Text="{Binding Fecha}"></Label>
+                                        <Label TextColor="Black" Grid.Column="1" Text="{Binding Fecha, StringFormat='{0:MMMM dd, yyyy hh:mm}'}"></Label>
                                     </Grid>
                                 </ViewCell>
                             </DataTemplate>

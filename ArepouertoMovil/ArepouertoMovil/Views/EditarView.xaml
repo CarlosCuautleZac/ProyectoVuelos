@@ -4,6 +4,17 @@
              x:Class="ArepouertoMovil.Views.EditarView" Background="#205295" NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <Grid>
+            <Grid.Resources>
+                <Style TargetType="Label">
+                    <Setter Property="TextColor" Value="White"></Setter>
+                    <Setter Property="FontAttributes" Value="Bold"></Setter>
+                    <Setter Property="Margin" Value="0,0,0,20"></Setter>
+                </Style>
+                <Style TargetType="Entry">
+                    <Setter Property="TextColor" Value="White"></Setter>
+                    <Setter Property="IsEnabled" Value="True"></Setter>
+                </Style>
+            </Grid.Resources>
             <StackLayout>
                 <Grid BackgroundColor="#144272" HeightRequest="50" Margin="0,0,0,0">
 
@@ -19,10 +30,10 @@
                     <Entry Text="{Binding Clon.Aerolinea}" Keyboard="Text"></Entry>
 
                     <Label>Fecha:</Label>
-                    <DatePicker FontSize="Body" Date="{Binding Fecha}"></DatePicker>
+                    <DatePicker TextColor="White" FontSize="Body" Date="{Binding Fecha}"></DatePicker>
 
                     <Label>Hora:</Label>
-                    <TimePicker FontSize="Body"  Time="{Binding Hora}"></TimePicker>
+                    <TimePicker TextColor="White" FontSize="Body"  Time="{Binding Hora}"></TimePicker>
 
                     <Label>Puerta:</Label>
                     <Entry Text="{Binding Clon.Puerta}" Keyboard="Numeric"></Entry>
@@ -32,17 +43,17 @@
                     ItemDisplayBinding="{Binding Observacion1}"></Picker>
                 </StackLayout>
             </StackLayout>
-            <Button Command="{Binding EditarCommand}" Text="Hecho"
+            <Button TextColor="White" Command="{Binding EditarCommand}" Text="Hecho"
                     Grid.Row="0" HorizontalOptions="End" VerticalOptions="End" Margin="0,0,20,22"
                     BackgroundColor="#144272" CornerRadius="20" HeightRequest="60" WidthRequest="120"
                     ></Button>
 
-            <Button Command="{Binding CancelarCommand}" Text="Cancelar"
+            <Button TextColor="White" Command="{Binding CancelarCommand}" Text="Cancelar"
                     Grid.Row="0" HorizontalOptions="Start" VerticalOptions="End" Margin="22,0,20,22"
                     BackgroundColor="#144272" CornerRadius="20" HeightRequest="60"
                     ></Button>
 
-            <Image
+            <Image 
                 WidthRequest="50" Margin="0,0,0,22"
                 Grid.Row="0" VerticalOptions="End" HorizontalOptions="Center" Source="icono.png"></Image>
         </Grid>
