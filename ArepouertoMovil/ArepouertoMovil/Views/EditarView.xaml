@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ArepouertoMovil.Views.EditarView" Background="#205295" NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout>
+                <Grid BackgroundColor="#144272" HeightRequest="50" Margin="0,0,0,0">
+
+                    <Label TextColor="White" FontSize="20" VerticalOptions="Center" HorizontalOptions="Center" >Editar detalles</Label>
+                </Grid>
+
+                <StackLayout Margin="15" Spacing="15">
+
+                    <Label>Destino:</Label>
+                    <Entry Text="{Binding Clon.Destino}" Keyboard="Text"></Entry>
+
+                    <Label>Aerolinea:</Label>
+                    <Entry Text="{Binding Clon.Aerolinea}" Keyboard="Text"></Entry>
+
+                    <Label>Fecha:</Label>
+                    <DatePicker FontSize="Body" Date="{Binding Fecha}"></DatePicker>
+
+                    <Label>Hora:</Label>
+                    <TimePicker FontSize="Body"  Time="{Binding Hora}"></TimePicker>
+
+                    <Label>Puerta:</Label>
+                    <Entry Text="{Binding Clon.Puerta}" Keyboard="Numeric"></Entry>
+
+                    <Label>Observacion:</Label>
+                    <Picker ItemsSource="{Binding Observaciones}" SelectedItem="{Binding Observacion}"
+                    ItemDisplayBinding="{Binding Observacion1}"></Picker>
+                </StackLayout>
+            </StackLayout>
+            <Button Command="{Binding EditarCommand}" Text="Hecho"
+                    Grid.Row="0" HorizontalOptions="End" VerticalOptions="End" Margin="0,0,20,22"
+                    BackgroundColor="#144272" CornerRadius="20" HeightRequest="60" WidthRequest="120"
+                    ></Button>
+
+            <Button Command="{Binding CancelarCommand}" Text="Cancelar"
+                    Grid.Row="0" HorizontalOptions="Start" VerticalOptions="End" Margin="22,0,20,22"
+                    BackgroundColor="#144272" CornerRadius="20" HeightRequest="60"
+                    ></Button>
+
+            <Image
+                WidthRequest="50" Margin="0,0,0,22"
+                Grid.Row="0" VerticalOptions="End" HorizontalOptions="Center" Source="icono.png"></Image>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

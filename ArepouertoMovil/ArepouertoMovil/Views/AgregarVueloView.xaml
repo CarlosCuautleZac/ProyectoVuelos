@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ArepouertoMovil.ViewModels"
+             x:Class="ArepouertoMovil.Views.AgregarVueloView" NavigationPage.HasNavigationBar="False"
+             Background="#205295">
+    <ContentPage.Content>
+        <StackLayout Margin="20" Spacing="15">
+            <Label>Destino:</Label>
+            <Entry Text="{Binding Vuelo.Destino}" Keyboard="Text"></Entry>
+            
+            <Label>Aerolinea:</Label>
+            <Entry Text="{Binding Vuelo.Aerolinea}" Keyboard="Text"></Entry>
+            
+            <Label>Fecha:</Label>
+            <DatePicker MinimumDate="{Binding MinDate}" Date="{Binding Fecha}"></DatePicker>
+            
+            <Label>Hora:</Label>
+            <TimePicker Time="{Binding Hora}"></TimePicker>
+            
+            <Label>Puerta:</Label>
+            <Entry Text="{Binding Vuelo.Puerta}" Keyboard="Numeric"></Entry>
+            
+            <Label>Observacion:</Label>
+            <Picker ItemsSource="{Binding Observaciones}" SelectedIndex="0" SelectedItem="{Binding Observacion}"
+                    ItemDisplayBinding="{Binding Observacion1}"></Picker>
+            <Button BackgroundColor="#144272" CornerRadius="50" Command="{Binding EnviarVueloCommand}" Text="Enviar"></Button>
+        </StackLayout>                                                                  
+    </ContentPage.Content>
+</ContentPage>

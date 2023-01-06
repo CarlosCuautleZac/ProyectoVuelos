@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ArepouertoMovil.Views.PaginaPrincipal"
+             xmlns:vm="clr-namespace:ArepouertoMovil.ViewModels" Background="#144272" NavigationPage.HasNavigationBar="False">
+    <ContentPage.BindingContext>
+        <vm:VuelosViewModel></vm:VuelosViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <ScrollView Grid.Row="0">
+                <StackLayout>
+                    <Grid>
+                        <Image Margin="10,0,0,0" HorizontalOptions="Start" WidthRequest="50" Source="icono.png"></Image>
+                        <Label TextColor="White" Padding="10" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20">Vuelos actuales</Label>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Frame BackgroundColor="#0A2647" HeightRequest="35" Padding="5,5,5,0" Margin="10,0,0,0" Grid.Column="0">
+                            <Label TextColor="White"  FontSize="15">Destino</Label>
+                        </Frame>
+                        <Frame BackgroundColor="#0A2647" HeightRequest="35" Padding="5,5,5,0" Margin="-6,0,10,0" Grid.Column="1">
+                            <Label TextColor="White"  FontSize="15">Fecha</Label>
+                        </Frame>
+                    </Grid>
+                    <ListView Margin="10,0,10,10" BackgroundColor="#E3E3E3" ItemsSource="{Binding Vuelos}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Grid.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                                        </Grid.GestureRecognizers>
+                                        <Label TextColor="Black" Grid.Column="0" Text="{Binding Destino}"></Label>
+                                        <Label TextColor="Black" Grid.Column="1" Text="{Binding Fecha}"></Label>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ScrollView>
+            <Button Grid.Row="0" Text="&#9992;" FontAttributes="Bold" BackgroundColor="#144272"
+             TextColor="White" HorizontalOptions="End" VerticalOptions="End" WidthRequest="80"
+                    HeightRequest="80" Margin="0,0,20,22" BorderColor="#0A2647" BorderWidth="1"
+                    CornerRadius="50" FontSize="40" Command="{Binding VerNuevoVueloCommand}"
+                    
+             ></Button>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

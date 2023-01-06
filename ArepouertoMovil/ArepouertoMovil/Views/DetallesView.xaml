@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ArepouertoMovil.Views.DetallesView" Background="#205295" NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout>
+                <Grid BackgroundColor="#144272" HeightRequest="50" Margin="0,0,0,0">
+                    <Image
+                 Margin="350,10,0,0"
+                Grid.Column="0" HorizontalOptions="StartAndExpand" Source="icono.png"></Image>
+                    <Label TextColor="White" FontSize="20" VerticalOptions="Center" HorizontalOptions="Center" >Detalles del vuelo</Label>
+                </Grid>
+
+                <StackLayout Margin="15" Spacing="15">
+
+                    <Label>Destino:</Label>
+                    <Label Text="{Binding Vuelo.Destino}"></Label>
+
+                    <Label>Aerolinea:</Label>
+                    <Label Text="{Binding Vuelo.Aerolinea}" ></Label>
+
+                    <Label>Fecha:</Label>
+                    <Label FontSize="Body" Text="{Binding Fecha, StringFormat='{}{0:dd/MM/yyyy}'}"></Label>
+
+                    <Label>Hora:</Label>
+                    <Label FontSize="Body" Text="{Binding Hora}"></Label>
+
+                    <Label>Puerta:</Label>
+                    <Label  Text="{Binding Vuelo.Puerta}" ></Label>
+
+                    <Label>Observacion:</Label>
+                    <Label  Text="{Binding Vuelo.Observacion}" ></Label>
+                    
+                </StackLayout>
+            </StackLayout>
+
+            <Button Command="{Binding VerEditarCommand}" Text="&#9999;" FontSize="35" TextColor="Yellow"
+                    Grid.Row="0" HorizontalOptions="End" VerticalOptions="End" Margin="0,0,20,40"
+                    BackgroundColor="#144272" CornerRadius="50" HeightRequest="80" WidthRequest="80"
+                    ></Button>
+            <Image Source="editar.png" HorizontalOptions="End" VerticalOptions="End" Margin="0,0,32,50"
+                   HeightRequest="50" WidthRequest="50"
+                   ></Image>
+
+            <Button Command="{Binding EliminarCommand}" Text="&#128465;" FontSize="30"
+                    Grid.Row="0" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,-110,15"
+                    BackgroundColor="#144272" CornerRadius="50" HeightRequest="70" WidthRequest="70"
+                    ></Button>
+            <Image Source="eliminar.png" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,-110,25"
+                   HeightRequest="50" WidthRequest="50"
+                   ></Image>
+            
+            <Button Command="{Binding CancelarCommand}" Text="Atras"
+                    Grid.Row="0" HorizontalOptions="Start" VerticalOptions="End" Margin="22,0,20,22"
+                    BackgroundColor="#144272" CornerRadius="20" HeightRequest="60"
+                    ></Button>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
